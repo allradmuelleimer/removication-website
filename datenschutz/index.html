@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutzerklärung — Removication</title>
+<meta name="description" content="Removication sendet nichts. Welche Daten die App verarbeitet, was gespeichert wird und was sie technisch nicht sehen kann.">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://removication.netlify.app/datenschutz/">
+<link rel="alternate" hreflang="en" href="https://removication.netlify.app/privacy/">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">Remo<span>vication</span></a>
+    <nav class="site" aria-label="Hauptnavigation">
+      <a href="/datenschutz/">Datenschutz</a>
+      <a href="/impressum/">Impressum</a>
+      <a href="/privacy/" hreflang="en" lang="en">English</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <div class="wrap">
+    <h1>Datenschutzerklärung</h1>
+    <p class="stand">Stand: 11. September 2026</p>
+
+    <div class="card">
+      <h2 style="margin-top:.25rem">Kurzfassung</h2>
+      <p>Removication sendet nichts. Die App besitzt keine Berechtigung, auf das Internet
+        zuzugreifen. Alle Daten — auch die Inhalte abgefangener Benachrichtigungen — bleiben
+        ausschließlich auf deinem Gerät und werden nicht ins Cloud-Backup übernommen.</p>
+    </div>
+
+    <h2>Verantwortlicher</h2>
+    <address>
+      Gideon Hoja — Nice Developments<br>
+      Maschstraße 36<br>
+      38114 Braunschweig<br>
+      Deutschland<br><br>
+      E-Mail: <a href="mailto:verynicedevelopments@gmail.com">verynicedevelopments@gmail.com</a>
+    </address>
+
+    <h2>Welche Daten verarbeitet die App?</h2>
+
+    <h3>Benachrichtigungen anderer Apps</h3>
+    <p>Damit Removication eine Benachrichtigung ausblenden kann, muss das Betriebssystem sie der
+      App zeigen. Dafür erteilst du in den Android-Einstellungen den
+      <strong>Benachrichtigungszugriff</strong>. Ohne ihn hat die App keine Funktion.</p>
+    <p>Verarbeitet werden dabei:</p>
+    <ul>
+      <li>der Paketname der sendenden App</li>
+      <li>Titel, Text und Zusatztext der Benachrichtigung</li>
+      <li>bei Chat-Benachrichtigungen der Name des Absenders</li>
+      <li>die Benachrichtigungsart (&bdquo;Kanal&ldquo;), die die sendende App vergeben hat</li>
+      <li>Zeitpunkt des Eingangs</li>
+    </ul>
+    <p><strong>Gespeichert wird davon nur, was tatsächlich ausgeblendet wurde.</strong>
+      Benachrichtigungen, die durchgelassen werden, verarbeitet die App im Arbeitsspeicher und
+      vergisst sie sofort wieder.</p>
+    <p>Ausgeblendete Benachrichtigungen landen im <strong>Notification Catcher</strong> — einer
+      Liste innerhalb der App. In der Gratis-Version werden Einträge nach 24 Stunden automatisch
+      gelöscht, mit Premium nach der eingestellten Aufbewahrungsdauer (Standard 30 Tage). Du
+      kannst jeden Eintrag und die gesamte Liste jederzeit selbst löschen.</p>
+
+    <h3>Was die App über deine Apps lernt</h3>
+    <p>Removication merkt sich, welche Benachrichtigungsarten deine Apps verwenden und wie häufig
+      sie senden. Das dient zwei Zwecken: Die App-Auswahl kann nach tatsächlicher Häufigkeit
+      sortieren, und du kannst Regeln auf einzelne Benachrichtigungsarten setzen. Gespeichert
+      werden dabei nur Bezeichnung und Anzahl — keine Inhalte.</p>
+
+    <h3>Was die App nicht sieht</h3>
+    <p>Ab Android 15 markiert das Betriebssystem Benachrichtigungen mit Bestätigungscodes und
+      Einmalpasswörtern als besonders schützenswert. Apps wie Removication erhalten deren Inhalt
+      gar nicht erst. Bank-TANs und Login-Codes sind für die App technisch unlesbar.</p>
+
+    <h3>Feld-Mitschnitt (Entwicklerwerkzeug)</h3>
+    <p>Die App enthält eine ausdrücklich einzuschaltende Funktion, die technische Details
+      eingehender Benachrichtigungen in eine lokale Datei schreibt — als Grundlage für die
+      Absender- und Betreff-Regeln. Sie ist standardmäßig aus, hat eine Größenbegrenzung und
+      lässt sich mit einem Tipp löschen. Die Datei verlässt das Gerät nicht.</p>
+
+    <h2>Weitergabe an Dritte</h2>
+    <p>Es findet <strong>keine</strong> Weitergabe statt. Die App hat keine Netzwerkverbindung,
+      bindet keine Analyse- oder Werbebibliotheken ein und legt keine Nutzerkonten an.</p>
+    <p>Die einzige Ausnahme betrifft den Kauf der Premium-Version: Dieser läuft über
+      <strong>Google Play Billing</strong>. Removication erfährt dabei nur, ob ein gültiger Kauf
+      vorliegt. Die Zahlungsabwicklung liegt vollständig bei Google; es gilt die
+      Datenschutzerklärung von Google.</p>
+
+    <h2>Berechtigungen und wofür sie gebraucht werden</h2>
+    <table>
+      <thead><tr><th>Berechtigung</th><th>Wofür</th></tr></thead>
+      <tbody>
+        <tr><td>Benachrichtigungszugriff</td><td>Kernfunktion — ohne ihn kann nichts ausgeblendet werden</td></tr>
+        <tr><td>Benachrichtigungen senden</td><td>ausschließlich für die neutrale Ersatzmeldung im Zensur-Modus</td></tr>
+        <tr><td>Abfrage installierter Apps</td><td>um die App-Auswahlliste zu füllen</td></tr>
+        <tr><td>Google Play Billing</td><td>Kauf und Wiederherstellung der Premium-Version</td></tr>
+      </tbody>
+    </table>
+    <p>Die App fordert <strong>keine</strong> Berechtigung für Internet, Standort, Kontakte,
+      Kamera, Mikrofon oder Speicher an.</p>
+
+    <h2>App-Sperre (Premium)</h2>
+    <p>Wer die App-Sperre einschaltet, legt einen vierstelligen Code fest. Er wird nicht im
+      Klartext gespeichert, sondern gesalzen und gehasht — vergleichbar mit einem Passwort. Der
+      Code verlässt das Gerät nicht und dient ausschließlich dazu, Sets und Notification Catcher
+      innerhalb der App zu schützen. Er ist unabhängig von der Displaysperre des Geräts.</p>
+
+    <h2>Backup und Gerätewechsel</h2>
+    <p>Die Datenbank der App ist von Androids Cloud-Backup und von der
+      Geräte-zu-Gerät-Übertragung ausgenommen. Beim Wechsel auf ein neues Gerät musst du Sets und
+      Regeln neu anlegen — das ist eine bewusste Entscheidung: Benachrichtigungsinhalte gehören
+      nicht in eine Sicherung, die aus der Hand gegeben wird.</p>
+
+    <h2>Löschung</h2>
+    <p>Alle Daten liegen im privaten Speicherbereich der App. Sie werden vollständig gelöscht,
+      wenn du die App deinstallierst oder in den Android-Einstellungen ihren Speicher leerst.</p>
+
+    <h2>Deine Rechte</h2>
+    <p>Da keine Daten an uns übertragen werden, gibt es bei uns nichts, worüber Auskunft erteilt
+      oder was gelöscht werden könnte. Auskunft, Berichtigung und Löschung nach DSGVO übst du
+      unmittelbar auf deinem Gerät aus. Für Rückfragen erreichst du uns unter der oben genannten
+      Adresse.</p>
+
+    <h2>Änderungen</h2>
+    <p>Wesentliche Änderungen werden in der App und im Play-Store-Eintrag angekündigt. Diese Seite
+      trägt oben das Datum der letzten Fassung.</p>
+
+    <h2>Diese Website</h2>
+    <p>Die Seite setzt keine Cookies, bindet keine Schriften oder Skripte von fremden Servern ein
+      und wertet nichts aus — deshalb gibt es auch kein Cookie-Banner. Beim Abruf verarbeitet der
+      Hoster <a href="https://www.netlify.com/privacy/" rel="nofollow noopener">Netlify</a>
+      technisch notwendige Verbindungsdaten (IP-Adresse, Zeitpunkt, abgerufene Datei) zur
+      Auslieferung und Angriffsabwehr. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
+  </div>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <p>Nice Developments — Gideon Hoja, Braunschweig</p>
+    <p><a href="/">Start</a> · <a href="/impressum/">Impressum</a> · <a href="/privacy/" hreflang="en" lang="en">English</a></p>
+  </div>
+</footer>
+</body>
+</html>

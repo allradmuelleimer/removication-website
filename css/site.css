@@ -1,0 +1,111 @@
+/* Removication - Website. Ein einziges Stylesheet, keine Abhaengigkeiten.
+   Palette ist dieselbe wie in der App (ui/theme/Color.kt): dark-first, Violett als Akzent. */
+
+:root {
+  --base: #0A0E1A;
+  --surface: #131A2C;
+  --elevated: #1B2440;
+  --outline: #2A3552;
+  --accent: #7C5CFF;
+  --accent-soft: #A78BFA;
+  --text: #E8ECF7;
+  --text-2: #93A0BE;
+  --text-3: #5D6B8C;
+  --measure: 42rem;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--base);
+  color: var(--text);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-wrap: break-word;
+}
+
+.wrap { max-width: var(--measure); margin: 0 auto; padding: 0 1.25rem; }
+
+.skip {
+  position: absolute; left: -9999px;
+  background: var(--accent); color: #fff; padding: .6rem 1rem; border-radius: 0 0 8px 0;
+}
+.skip:focus { left: 0; top: 0; }
+
+header.site {
+  border-bottom: 1px solid var(--outline);
+  background: var(--surface);
+}
+header.site .wrap {
+  display: flex; flex-wrap: wrap; gap: .75rem 1.5rem;
+  align-items: baseline; justify-content: space-between;
+  padding-top: 1rem; padding-bottom: 1rem;
+}
+.brand {
+  font-weight: 700; font-size: 1.05rem; letter-spacing: .01em;
+  color: var(--text); text-decoration: none;
+}
+.brand span { color: var(--accent-soft); }
+nav.site a { color: var(--text-2); text-decoration: none; margin-left: 1.1rem; font-size: .92rem; }
+nav.site a:first-child { margin-left: 0; }
+nav.site a:hover, nav.site a:focus { color: var(--text); text-decoration: underline; }
+
+main { padding: 2.5rem 0 3.5rem; }
+
+h1 { font-size: 1.85rem; line-height: 1.25; margin: 0 0 .5rem; letter-spacing: -.01em; }
+h2 { font-size: 1.15rem; margin: 2.25rem 0 .6rem; color: var(--text); }
+h3 { font-size: 1rem; margin: 1.5rem 0 .4rem; color: var(--accent-soft); }
+p, li { color: var(--text-2); }
+p { margin: 0 0 1rem; }
+li { margin-bottom: .35rem; }
+strong { color: var(--text); }
+
+.lead { font-size: 1.05rem; color: var(--text); }
+.stand { color: var(--text-3); font-size: .875rem; margin-bottom: 2rem; }
+
+a { color: var(--accent-soft); }
+a:hover { color: var(--text); }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--outline);
+  border-left: 3px solid var(--accent);
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem .3rem;
+  margin: 1.5rem 0 2rem;
+}
+.card p:last-child { margin-bottom: 1rem; }
+
+table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: .95rem; }
+th, td { text-align: left; padding: .55rem .6rem; border-bottom: 1px solid var(--outline); vertical-align: top; }
+th { color: var(--text); font-weight: 600; }
+td { color: var(--text-2); }
+
+.tiles { display: grid; gap: .75rem; margin: 2rem 0; padding: 0; list-style: none; }
+.tiles a {
+  display: block; text-decoration: none;
+  background: var(--surface); border: 1px solid var(--outline); border-radius: 12px;
+  padding: 1rem 1.15rem;
+}
+.tiles a:hover, .tiles a:focus { border-color: var(--accent); background: var(--elevated); }
+.tiles b { display: block; color: var(--text); font-size: 1rem; }
+.tiles em { display: block; color: var(--text-3); font-style: normal; font-size: .9rem; margin-top: .15rem; }
+
+address { font-style: normal; color: var(--text-2); }
+
+footer.site {
+  border-top: 1px solid var(--outline);
+  padding: 1.5rem 0 2.5rem;
+  color: var(--text-3); font-size: .875rem;
+}
+footer.site a { color: var(--text-3); }
+footer.site p { color: var(--text-3); margin: 0 0 .4rem; }
+
+:focus-visible { outline: 2px solid var(--accent-soft); outline-offset: 2px; }
+
+@media (max-width: 30rem) {
+  h1 { font-size: 1.5rem; }
+  header.site .wrap { padding-top: .85rem; padding-bottom: .85rem; }
+}

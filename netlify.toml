@@ -1,0 +1,23 @@
+# Netlify-Konfiguration fuer die Removication-Website.
+# Es gibt keinen Bauschritt: Was in diesem Ordner liegt, wird ausgeliefert.
+
+[build]
+  publish = "."
+  command = ""
+
+# Sicherheits-Header. Die CSP erlaubt ausschliesslich eigene Dateien - die Seite laedt
+# ohnehin nichts von fremden Servern, und so bleibt das auch, falls jemand es versehentlich
+# einbaut.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
