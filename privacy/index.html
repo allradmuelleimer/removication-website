@@ -42,7 +42,7 @@
       for. Without it the app has no function.</p>
     <p>The following is processed:</p>
     <ul>
-      <li>the package name of the sending app</li>
+      <li>which app sent the notification</li>
       <li>title, text and sub-text of the notification</li>
       <li>for chat notifications, the name of the sender</li>
       <li>the notification category (&ldquo;channel&rdquo;) assigned by the sending app</li>
@@ -65,11 +65,12 @@
       codes and one-time passwords as sensitive. Apps like Removication never receive their
       content. Banking TANs and login codes are technically unreadable to the app.</p>
 
-    <h3>Field capture (developer tool)</h3>
-    <p>The app contains an explicitly opt-in feature that writes technical details of incoming
-      notifications to a local file, as a basis for building sender and subject rules. It is off
-      by default, has a size limit, and can be deleted with one tap. The file never leaves the
-      device.</p>
+    <h3>Field capture</h3>
+    <p>To build a rule for a particular sender or subject line, you need to know which field an
+      app writes its text into — every app does this differently. That is what field capture is
+      for: it notes those fields in a file on the device.</p>
+    <p>It is <strong>off unless you switch it on yourself</strong>. The file cannot grow without
+      limit, can be deleted with one tap, and never leaves the device.</p>
 
     <h2>Sharing with third parties</h2>
     <p>There is <strong>none</strong>. The app has no network connection, includes no analytics
@@ -93,10 +94,12 @@
       microphone or storage.</p>
 
     <h2>App lock (Premium)</h2>
-    <p>Turning on the app lock means choosing a four-digit code. It is not stored in plain text
-      but salted and hashed, like a password. The code never leaves the device and serves only to
-      protect sets and the Notification Catcher inside the app. It is independent of the
-      device&rsquo;s screen lock.</p>
+    <p>Turning on the app lock means choosing a four-digit code. <strong>The app stores that
+      code nowhere.</strong> It keeps only a kind of fingerprint of it — a string the code cannot
+      be recovered from. To unlock, it checks whether the code you typed produces the same
+      fingerprint. Anyone reading out the app&rsquo;s storage will not find the code there.</p>
+    <p>The code never leaves the device. It protects sets and the Notification Catcher inside the
+      app, and has nothing to do with your phone&rsquo;s screen lock.</p>
 
     <h2>Backup and changing devices</h2>
     <p>The app&rsquo;s database is excluded from Android cloud backup and from device-to-device

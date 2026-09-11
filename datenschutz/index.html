@@ -42,7 +42,7 @@
       <strong>Benachrichtigungszugriff</strong>. Ohne ihn hat die App keine Funktion.</p>
     <p>Verarbeitet werden dabei:</p>
     <ul>
-      <li>der Paketname der sendenden App</li>
+      <li>welche App die Benachrichtigung geschickt hat</li>
       <li>Titel, Text und Zusatztext der Benachrichtigung</li>
       <li>bei Chat-Benachrichtigungen der Name des Absenders</li>
       <li>die Benachrichtigungsart (&bdquo;Kanal&ldquo;), die die sendende App vergeben hat</li>
@@ -67,11 +67,13 @@
       Einmalpasswörtern als besonders schützenswert. Apps wie Removication erhalten deren Inhalt
       gar nicht erst. Bank-TANs und Login-Codes sind für die App technisch unlesbar.</p>
 
-    <h3>Feld-Mitschnitt (Entwicklerwerkzeug)</h3>
-    <p>Die App enthält eine ausdrücklich einzuschaltende Funktion, die technische Details
-      eingehender Benachrichtigungen in eine lokale Datei schreibt — als Grundlage für die
-      Absender- und Betreff-Regeln. Sie ist standardmäßig aus, hat eine Größenbegrenzung und
-      lässt sich mit einem Tipp löschen. Die Datei verlässt das Gerät nicht.</p>
+    <h3>Feld-Mitschnitt</h3>
+    <p>Um eine Regel auf einen bestimmten Absender oder Betreff zu bauen, muss man wissen, in
+      welches Feld eine App ihren Text schreibt — das handhabt jede App anders. Dafür gibt es
+      den Feld-Mitschnitt: Er notiert diese Felder in einer Datei auf dem Gerät.</p>
+    <p>Er ist <strong>von sich aus ausgeschaltet</strong> und läuft nur, wenn du ihn selbst
+      einschaltest. Die Datei kann nicht beliebig wachsen, lässt sich mit einem Tipp löschen und
+      verlässt das Gerät nicht.</p>
 
     <h2>Weitergabe an Dritte</h2>
     <p>Es findet <strong>keine</strong> Weitergabe statt. Die App hat keine Netzwerkverbindung,
@@ -95,10 +97,13 @@
       Kamera, Mikrofon oder Speicher an.</p>
 
     <h2>App-Sperre (Premium)</h2>
-    <p>Wer die App-Sperre einschaltet, legt einen vierstelligen Code fest. Er wird nicht im
-      Klartext gespeichert, sondern gesalzen und gehasht — vergleichbar mit einem Passwort. Der
-      Code verlässt das Gerät nicht und dient ausschließlich dazu, Sets und Notification Catcher
-      innerhalb der App zu schützen. Er ist unabhängig von der Displaysperre des Geräts.</p>
+    <p>Wer die App-Sperre einschaltet, legt einen vierstelligen Code fest. <strong>Die App
+      speichert diesen Code nirgends.</strong> Sie merkt sich nur eine Art Fingerabdruck davon —
+      eine Zeichenfolge, aus der sich der Code nicht zurückgewinnen lässt. Beim Entsperren wird
+      geprüft, ob der eingegebene Code denselben Fingerabdruck ergibt. Wer den Speicher der App
+      ausliest, findet den Code dort also nicht.</p>
+    <p>Der Code verlässt das Gerät nicht. Er schützt Sets und Notification Catcher innerhalb der
+      App und hat nichts mit der Bildschirmsperre deines Handys zu tun.</p>
 
     <h2>Backup und Gerätewechsel</h2>
     <p>Die Datenbank der App ist von Androids Cloud-Backup und von der
