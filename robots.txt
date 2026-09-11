@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://removication.netlify.app/sitemap.xml
+Sitemap: https://allradmuelleimer.github.io/removication-website/sitemap.xml

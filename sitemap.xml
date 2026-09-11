@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://removication.netlify.app/</loc>
+    <loc>https://allradmuelleimer.github.io/removication-website/</loc>
     <lastmod>2026-09-11</lastmod>
   </url>
   <url>
-    <loc>https://removication.netlify.app/datenschutz/</loc>
+    <loc>https://allradmuelleimer.github.io/removication-website/datenschutz/</loc>
     <lastmod>2026-09-11</lastmod>
-    <xhtml:link rel="alternate" hreflang="de" href="https://removication.netlify.app/datenschutz/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://removication.netlify.app/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://allradmuelleimer.github.io/removication-website/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://allradmuelleimer.github.io/removication-website/privacy/"/>
   </url>
   <url>
-    <loc>https://removication.netlify.app/privacy/</loc>
+    <loc>https://allradmuelleimer.github.io/removication-website/privacy/</loc>
     <lastmod>2026-09-11</lastmod>
-    <xhtml:link rel="alternate" hreflang="de" href="https://removication.netlify.app/datenschutz/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://removication.netlify.app/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://allradmuelleimer.github.io/removication-website/datenschutz/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://allradmuelleimer.github.io/removication-website/privacy/"/>
   </url>
 </urlset>

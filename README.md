@@ -4,7 +4,8 @@ Die öffentliche Datenschutzerklärung, die Google Play verlangt, dazu Impressum
 kleine Startseite. Deutsch und englisch.
 
 Reines HTML und ein Stylesheet. **Kein Build-Schritt, kein Framework, keine Abhängigkeiten.**
-Was in diesem Ordner liegt, wird eins zu eins ausgeliefert.
+
+**Live:** <https://allradmuelleimer.github.io/removication-website/>
 
 ```
 index.html              Startseite DE
@@ -14,59 +15,46 @@ privacy/                Privacy policy EN
 imprint/                Imprint EN
 404.html
 css/site.css            Das einzige Stylesheet, Palette wie in der App
-netlify.toml            Sicherheits-Header und CSP, kein Bauschritt
+.nojekyll               Verhindert, dass GitHub Pages die Dateien durch Jekyll schickt
 robots.txt  sitemap.xml
 ```
 
 ---
 
-## Veröffentlichen über GitHub + Netlify
+## Gehostet auf GitHub Pages
 
-Einmal einrichten, danach genügt ein `git push` — Netlify baut automatisch nach.
+Kein dritter Dienst: Das Repository *ist* der Server. Pages liefert aus, was im Branch `main`
+im Wurzelverzeichnis liegt — ein `git push` genügt, eine Minute später ist die Änderung online.
 
-**1. GitHub CLI anmelden** (nur beim allerersten Mal):
-
-```bash
-gh auth login
-```
-
-`GitHub.com` → `HTTPS` → `Y` → `Login with a web browser`, dann den angezeigten Code im
-Browser eintippen.
-
-**2. Repository anlegen und hochladen** — aus diesem Ordner heraus:
+Einmalig eingerichtet wurde:
 
 ```bash
-git init -b main
-git add -A
-git commit -m "Datenschutzerklärung und Impressum"
-gh repo create removication-website --private --source=. --push
+gh api -X POST repos/allradmuelleimer/removication-website/pages \
+  -f 'source[branch]=main' -f 'source[path]=/'
 ```
 
-**3. Netlify mit dem Repo verbinden** (der einzige Klick-Teil, weil GitHub die Erlaubnis
-selbst erteilen muss):
+Status jederzeit nachsehen:
 
-- [app.netlify.com](https://app.netlify.com) → **Add new site → Import an existing project → GitHub**
-- Zugriff erlauben, dabei genügt „Only select repositories" mit `removication-website`
-- **Build command leer lassen, Publish directory `.`** → Deploy
-- **Site configuration → Change site name** → `removication`
-
-Danach ist die Seite unter `https://removication.netlify.app/datenschutz/` erreichbar.
-
-**Alternative ohne GitHub:** [app.netlify.com/drop](https://app.netlify.com/drop) öffnen und
-diesen Ordner hineinziehen. Schneller beim ersten Mal, aber jede spätere Änderung heißt wieder
-Ordner ziehen — und man landet leicht versehentlich auf einer zweiten Site statt auf der alten.
+```bash
+gh api repos/allradmuelleimer/removication-website/pages --jq '.status, .html_url'
+```
 
 ---
 
-## Wenn der Site-Name nicht `removication` sein kann
+## Wichtig: die Pfade hängen am Repository-Namen
 
-Die Adresse steht fest in den `canonical`- und `hreflang`-Angaben, in `sitemap.xml`,
-`robots.txt` und in `PRIVACY_POLICY_URL` der App. Läuft die Seite unter einem anderen Namen,
-alles auf einmal umstellen:
+Pages liefert Projektseiten unter `/<repo-name>/` aus, nicht unter `/`. Deshalb stehen alle
+internen Verweise als `/removication-website/…` im Quelltext. **Wird das Repository umbenannt,
+bricht jede CSS- und Navigationsverknüpfung**, bis alles mitgezogen ist:
 
 ```bash
-grep -rl "removication.netlify.app" . ../app/src/main/java | xargs sed -i 's|removication\.netlify\.app|NEUE-ADRESSE|g'
+grep -rl "removication-website" . ../app/src/main/java --exclude-dir=.git \
+  | xargs sed -i 's|removication-website|NEUER-NAME|g'
 ```
+
+Dieselbe Adresse steht in `PRIVACY_POLICY_URL`
+(`app/src/main/java/de/gio/removication/ui/settings/SettingsScreen.kt`) und wird bei Google
+Play im Feld „Datenschutzerklärung" eingetragen.
 
 ---
 
