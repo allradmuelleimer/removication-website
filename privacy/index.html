@@ -108,8 +108,13 @@
         <tr><td>Query installed apps</td><td>To populate the app picker</td></tr>
         <tr><td>Google Play Billing</td><td>Purchase and restore of the Premium version</td></tr>
         <tr><td>Internet</td><td>solely for advertising in the free version</td></tr>
+        <tr><td>Network state</td><td>part of the ad library: checks whether a connection exists at all</td></tr>
+        <tr><td>Advertising ID</td><td>the resettable identifier Google uses to select and bill ads</td></tr>
       </tbody>
     </table>
+    <p>The last three come with Google&rsquo;s ad library. They are present in the Premium
+      package too — Android requires the declaration for the whole app — but go unused there,
+      because the library is never started.</p>
     <p>The app requests <strong>no</strong> permission for location, contacts, camera, microphone
       or storage. The internet permission serves advertising alone; hiding notifications neither
       needs nor uses it.</p>
