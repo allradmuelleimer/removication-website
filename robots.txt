@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://allradmuelleimer.github.io/removication-website/sitemap.xml

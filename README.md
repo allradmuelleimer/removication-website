@@ -16,7 +16,7 @@ imprint/                Imprint EN
 404.html
 css/site.css            Das einzige Stylesheet, Palette wie in der App
 .nojekyll               Verhindert, dass GitHub Pages die Dateien durch Jekyll schickt
-robots.txt  sitemap.xml
+robots.txt
 ```
 
 ---
@@ -63,3 +63,17 @@ Play im Feld „Datenschutzerklärung" eingetragen.
 Die Quelle ist `../docs/datenschutzerklaerung.md`. Wer sie ändert, muss
 `datenschutz/index.html` **und** `privacy/index.html` nachziehen und oben das Datum
 hochsetzen — sonst weichen App-Link, Store-Angabe und Wahrheit voneinander ab.
+
+---
+
+## Nicht in Suchmaschinen
+
+Auf jeder Seite steht Gideons Name (Impressum, Verantwortlicher). Deshalb tragen **alle Seiten**
+`<meta name="robots" content="noindex,follow">` — seit 22.09.2026 auch Start- und
+Datenschutzseite. Google Play braucht die Datenschutzseite nur **erreichbar**, nicht auffindbar.
+
+- **Nicht über `robots.txt` sperren.** Dann liest Google das `noindex` nie und zeigt bereits
+  bekannte Adressen trotzdem weiter an. Außerdem wertet Google eine `robots.txt` nur ganz oben auf
+  der Domain aus (`allradmuelleimer.github.io/robots.txt`), die hier liegende ist wirkungslos.
+- **Keine Sitemap** — sie würde Google genau die Seiten anbieten, die nicht erscheinen sollen.
+- **Neue Seiten** bekommen dieselbe Zeile, sonst taucht der Name über sie wieder auf.
